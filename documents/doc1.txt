@@ -1,0 +1,5 @@
+Machine learning is a branch of artificial intelligence that focuses on building systems that learn from data. 
+Instead of being explicitly programmed, machines improve their performance through experience.
+Machine learning algorithms analyze large datasets and identify patterns. 
+These patterns help systems make predictions or decisions without human intervention.
+Today, machine learning is widely used in recommendation systems, fraud detection, and image recognition.

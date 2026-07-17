@@ -1,0 +1,132 @@
+
+        <html>
+            <head>
+            <title>Plagiarism Report</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+                body{font-family:Arial;margin:40px}
+                table{border-collapse:collapse;width:70%}
+                th,td{border:1px solid #ccc;padding:10px}
+                th{background:#f2f2f2}
+                .high{color:red;font-weight:bold}
+                .match{
+                    border-left:5px solid #dc3545;
+                    background:#fafafa;
+                    padding:15px;
+                    margin:15px 0;
+                    box-shadow:0 2px 5px rgba(0,0,0,0.1)
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Plagiarism Detection Report</h1>
+                <button onclick="downloadReport()"
+                    style="
+                    padding:10px 15px;
+                    background:#007bff;
+                    color:white;
+                    border:none;
+                    border-radius:5px;
+                    cursor:pointer;
+                    margin-bottom:20px;">
+                    Download Report
+                </button>
+            <h2>Document Similarity</h2>
+            <div style="display:flex;gap:50px;align-items:center"></div>
+            <div style="width:500px"><canvas id="similarityChart"></canvas></div>
+            <div style="width:300px;margin-top:40px"><canvas id="pieChart"></canvas></div>
+            <table>
+                <tr>
+                    <th>Document</th>
+                    <th>Similarity</th>
+                </tr>
+            
+            <h2>Highlighted Source Document</h2>
+            <div style="
+                line-height:1.6;
+                border:1px solid #ccc;
+                padding:15px;
+                margin-top:20px;
+                background:#ffffff">
+                the solar system consists of the sun and all celestial bodies that orbit around it these include planets moons asteroids and comets earth is the third planet from the sun and the only known planet that supports life scientists study the solar system to understand the formation of planets and other astronomical objects space exploration missions have provided valuable data about the structure and history of the solar system
+            </div>
+            
+            <tr>
+            <td>doc3.txt</td>
+            <td >0.29%</td>
+            </tr>
+            
+            <tr>
+            <td>docs4.txt</td>
+            <td >0.15%</td>
+            </tr>
+            
+            <tr>
+            <td>doc1.txt</td>
+            <td >0.0%</td>
+            </tr>
+            
+            <tr>
+            <td>doc2.txt</td>
+            <td >0.0%</td>
+            </tr>
+            
+            <tr>
+            <td>docs5.txt</td>
+            <td >0.0%</td>
+            </tr>
+            </table><h2>Detected Plagiarized Sentences</h2>
+        <script>
+
+            function downloadReport() {
+                const element = document.createElement('a');
+                element.href = 'plagiarism_report.html';
+                element.download = 'plagiarism_report.html';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+            
+            const ctx = document.getElementById('similarityChart');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["doc3.txt", "docs4.txt", "doc1.txt", "doc2.txt", "docs5.txt"],
+                    datasets: [{
+                        label: 'Plagiarism Similarity (%)',
+                        data: [0.29, 0.15, 0.0, 0.0, 0.0],
+                        backgroundColor: 'rgba(220,53,69,0.6)',
+                        borderColor: 'rgba(220,53,69,1)',
+                        borderWidth: 1
+                    }]
+                },
+
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+            
+            const pieCtx = document.getElementById('pieChart');
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Plagiarized', 'Original'],
+                    datasets: [{
+                        data: [0.29, 99.71],
+                        backgroundColor: [
+                            'rgba(220,53,69,0.8)',
+                            'rgba(40,167,69,0.8)'
+                        ]
+                    }]
+                }
+            });
+            
+        </script>
+    </body>
+</html>

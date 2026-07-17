@@ -1,0 +1,5 @@
+Artificial intelligence includes machine learning as one of its most important components. 
+Machine learning systems improve automatically by analyzing data and learning patterns.
+These algorithms process large volumes of data and detect hidden structures within the information. 
+The discovered patterns allow the system to make intelligent decisions.
+Applications of machine learning include recommendation engines, fraud detection systems, and computer vision technologies.

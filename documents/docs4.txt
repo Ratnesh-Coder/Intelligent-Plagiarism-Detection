@@ -1,0 +1,5 @@
+Computer networks allow devices to communicate and share resources. 
+A network consists of nodes such as computers, servers, and routers connected through communication links.
+Protocols define how data is transmitted between devices. 
+The Internet is the largest example of a computer network and connects millions of devices worldwide.
+Network security is important to protect data and prevent unauthorized access.

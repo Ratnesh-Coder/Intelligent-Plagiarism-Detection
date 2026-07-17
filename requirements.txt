@@ -1,0 +1,7 @@
+nltk
+sentence-transformers
+scikit-learn
+python-docx
+PyPDF2
+tk
+customtkinter

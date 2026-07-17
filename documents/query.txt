@@ -1,0 +1,2 @@
+Machine learning is an important field of artificial intelligence. It allows computers to learn patterns from large datasets.
+Many modern applications such as recommendation systems and fraud detection rely on machine learning techniques.
